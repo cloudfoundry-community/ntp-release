@@ -1,2 +1,5 @@
 # abort script on any command that exits with a non zero value
 set -e
+
+# We use the stemcell's ntpd; we don't need to compile anything
+exit 0
