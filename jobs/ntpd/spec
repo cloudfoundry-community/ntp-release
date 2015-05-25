@@ -1,0 +1,5 @@
+---
+name: ntpd
+templates:
+
+packages:
