@@ -1,5 +1,12 @@
 ---
 name: ntpd
 templates:
+  ctl.sh: bin/ctl
+  ntp.conf.erb: etc/ntp.conf
 
 packages:
+- ntp
+
+properties:
+  config_file:
+    description: 'The contents of ntp.conf'
