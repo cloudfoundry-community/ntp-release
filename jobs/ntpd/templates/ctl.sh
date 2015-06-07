@@ -10,7 +10,7 @@ case $1 in
   start)
     mkdir -p $RUN_DIR
     chown -R vcap:vcap $RUN_DIR
-    exec /usr/sbin/ntpd -u vcap:vcap -p $PID_FILE -c /var/vcap/packages/ntpd/etc/ntp.conf
+    exec /usr/sbin/ntpd -u vcap:vcap -p $PID_FILE -c /var/vcap/jobs/ntpd/etc/ntp.conf
     ;;
 
   stop)
