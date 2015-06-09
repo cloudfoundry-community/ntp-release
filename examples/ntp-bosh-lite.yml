@@ -24,7 +24,7 @@ jobs:
   templates:
   - { release: ntp, name: ntpd }
   properties:
-    config_file: |
+    ntp_conf: |
       # Our upstream timekeepers
       # change 'us' to your countries two-letter domain
       server 0.us.pool.ntp.org
