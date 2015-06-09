@@ -1,5 +1,5 @@
 ---
-name: ntp
+name: ntp-4.2.8p2
 
 dependencies:
 

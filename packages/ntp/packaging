@@ -1,5 +1,10 @@
 # abort script on any command that exits with a non zero value
 set -e
 
-# We use the stemcell's ntpd; we don't need to compile anything
-exit 0
+curl -OL http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p2.tar.gz
+tar xvzf ntp-4.2.8p2.tar.gz
+cd ntp-4.2.8p2
+./configure \
+  --prefix=${BOSH_INSTALL_TARGET} \
+make
+make install
