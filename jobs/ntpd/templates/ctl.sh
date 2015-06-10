@@ -8,6 +8,9 @@ PID_FILE=${RUN_DIR}/ntpd.pid
 case $1 in
 
   start)
+    # we must stop and disable chronyd on CentOS; it contends for NTP port 123
+    systemctl disable chronyd; systemctl stop chronyd
+    # kick off ntpd
     mkdir -p $RUN_DIR
     chown -R vcap:vcap $RUN_DIR
     exec /var/vcap/packages/ntp-4.2.8p2/bin/ntpd -u vcap:vcap -p $PID_FILE -c /var/vcap/jobs/ntpd/etc/ntp.conf
