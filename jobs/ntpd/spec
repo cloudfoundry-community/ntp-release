@@ -5,7 +5,7 @@ templates:
   ntp.conf.erb: etc/ntp.conf
 
 packages:
-- ntp
+- ntp-4.2.8p2
 
 properties:
   ntp_conf:

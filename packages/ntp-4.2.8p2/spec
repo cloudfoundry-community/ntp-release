@@ -4,4 +4,4 @@ name: ntp-4.2.8p2
 dependencies:
 
 files:
-- ntp/placeholder
+- ntp-4.2.8p2/placeholder
