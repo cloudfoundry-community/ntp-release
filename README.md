@@ -62,6 +62,15 @@ sudo route add -net 10.244.0.0/24 192.168.50.4
 ntpdate -q 10.244.0.66 # os x, old linux
 ```
 
+### 7. [Optional] Comment-out `ntpdate` cronjob
+
+Our stemcell had an `ntpdate` cronjob; we commented it out: `ntpdate` is a coarse timekeeper and not necessary when `ntpd` is running. We ssh'ed into our VM and did the following:
+
+```
+sudo crontab -e
+    #0,15,30,45 * * * * /var/vcap/bosh/bin/ntpdate
+```
+
 ### Stemcells
 
 This has been tested with the following stemcells:
