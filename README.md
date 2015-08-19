@@ -79,4 +79,4 @@ This has been tested with the following stemcells:
 
 ### Bugs
 
-It's a minimal BOSH release&mdash;the stemcell includes the `ntpd` executable, so no compilation is necessary.
+Certain stemcells include their own ntpd (BOSH Lite, IIRC)
