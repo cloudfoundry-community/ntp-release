@@ -1,0 +1,7 @@
+---
+name: ntp
+
+dependencies:
+
+files:
+- ntp/ntp-4.2.8p8.tar.gz  # http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p8.tar.gz

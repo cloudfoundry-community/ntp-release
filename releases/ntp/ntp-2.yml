@@ -1,6 +1,6 @@
 ---
 packages:
-- name: ntp-4.2.8p2
+- name: ntp-4.2.8p8
   version: 543219fbdaf6ec6f8af2956016055f2fb100d782
   fingerprint: 543219fbdaf6ec6f8af2956016055f2fb100d782
   sha1: e42db26038a42994b0255939d0d046ca58071a45

@@ -13,7 +13,7 @@ case $1 in
     # kick off ntpd
     mkdir -p $RUN_DIR
     chown -R vcap:vcap $RUN_DIR
-    exec /var/vcap/packages/ntp-4.2.8p2/bin/ntpd -u vcap:vcap -p $PID_FILE -c /var/vcap/jobs/ntpd/etc/ntp.conf
+    exec /var/vcap/packages/ntp/bin/ntpd -u vcap:vcap -p $PID_FILE -c /var/vcap/jobs/ntpd/etc/ntp.conf
     ;;
 
   stop)
