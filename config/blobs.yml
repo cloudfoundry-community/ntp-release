@@ -1,1 +1,5 @@
---- {}
+---
+ntp-4.2.8p8.tar.gz:
+  object_id: fddade8c-d71a-4f31-b3ac-402cd5002940
+  sha: 208ae3e2ce1237ad684c3bc818b6314d28636e46
+  size: 7205710
