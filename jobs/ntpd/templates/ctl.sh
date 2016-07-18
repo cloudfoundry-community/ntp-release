@@ -9,7 +9,9 @@ case $1 in
 
   start)
     # we must stop and disable chronyd on CentOS; it contends for NTP port 123
-    systemctl disable chronyd; systemctl stop chronyd
+    if [ -f /etc/centos-release ] || [ -f /etc/redhat-release ]; then
+        systemctl disable chronyd; systemctl stop chronyd
+    fi
     # kick off ntpd
     mkdir -p $RUN_DIR
     chown -R vcap:vcap $RUN_DIR
