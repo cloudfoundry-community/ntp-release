@@ -1,14 +1,13 @@
 ---
-name: ntpd
+name: ntpd_server
 
 templates:
   ctl: bin/ctl
   ntp.conf: config/ntp.conf
 
-consumes:
+provides:
 - name: ntp
   type: ntp
-  optional: true
 
 packages:
 - ntp

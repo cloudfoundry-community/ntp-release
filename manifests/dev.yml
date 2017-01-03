@@ -1,0 +1,7 @@
+- type: replace
+  path: /releases/name=ntp/version
+  value: create
+
+- type: replace
+  path: /releases/name=ntp/url?
+  value: file:///Users/pivotal/workspace/ntp-release
