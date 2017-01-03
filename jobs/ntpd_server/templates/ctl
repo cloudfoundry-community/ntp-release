@@ -1,0 +1,41 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/ntpd_server
+PID_FILE=${RUN_DIR}/ntpd.pid
+
+case $1 in
+
+  start)
+    # We must stop and disable chronyd on CentOS; it contends for NTP port 123
+    if [ -f /etc/centos-release ] || [ -f /etc/redhat-release ]; then
+        systemctl disable chronyd
+        systemctl stop chronyd
+    fi
+
+    # Kick off ntpd
+    mkdir -p $RUN_DIR
+    chown -R vcap:vcap $RUN_DIR
+
+    # ntpd is on stemcell by default
+    exec /var/vcap/packages/ntp/bin/ntpd \
+      -u vcap:vcap \
+      -p $PID_FILE \
+      -c /var/vcap/jobs/ntpd_server/config/ntp.conf
+
+    ;;
+
+  stop)
+    if [ -f $PID_FILE ]; then
+      pid=$(cat $PID_FILE)
+      kill -TERM $pid
+      sleep 1
+      kill -KILL $pid
+      rm -f $PID_FILE
+    fi
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac
