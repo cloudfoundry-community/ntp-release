@@ -2,9 +2,9 @@
 
 set -e
 
-tar xf ntp-4.2.8p8.tar.gz
+tar xf ntp/ntp-4.2.8p11.tar.gz
 
-cd ntp-4.2.8p8
+cd ntp-4.2.8p11
 ./configure --prefix=${BOSH_INSTALL_TARGET}
 make
 make install

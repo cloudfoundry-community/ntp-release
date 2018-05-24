@@ -3,7 +3,8 @@ name: ntpd
 
 templates:
   ctl: bin/ctl
-  ntp.conf: config/ntp.conf
+  ntp.conf.erb: config/ntp.conf
+  post-start.erb: bin/post-start
 
 consumes:
 - name: ntp
@@ -16,3 +17,9 @@ packages:
 properties:
   ntp_conf:
     description: "ntpd's configuration file (ntp.conf)"
+  post_start:
+    description: "post-start script (remove `ntpdate`). Must start with `#!`"
+    default: |
+      #!/bin/bash -x
+      crontab -l | egrep -v "/var/vcap/bosh/bin/sync-time" > crontab
+      crontab crontab
