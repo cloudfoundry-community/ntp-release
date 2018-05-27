@@ -12,14 +12,26 @@ bosh -e vbox -d ntp deploy manifests/ntp-lite.yml
 ntpdate -q 10.244.0.34 # macOS, old linux
 ```
 
-### [Optional] Comment-out `ntpdate` cronjob
+### Use [`post-start`](https://bosh.io/docs/post-start/) To Disable Competing Timekeepers
 
-Our stemcell had an `ntpdate` cronjob; we commented it out: `ntpdate` is a coarse timekeeper and not necessary when `ntpd` is running. We ssh'ed into our VM and did the following:
+You don't need to make changes to your manifest if you're deploying to Ubuntu
+Trusty stemcell — our default `post_start` property disables the cron job which
+runs every fifteen minutes to synchronize time.
 
+If you're using the Ubuntu Xenial stemcell, you many want to set the
+`post_start` property to disable the `chrony` service by adding something similar
+to the following to the `ntpd` job properties:
+
+```yaml
+post_start: |
+  #!/bin/bash -x
+  # on Xenial we disable chrony because we're running ntpd
+  systemctl disable chrony.service
+  systemctl stop    chrony.service
 ```
-sudo crontab -e
-    #0,15,30,45 * * * * /var/vcap/bosh/bin/ntpdate
-```
+
+Note: It's not terribly important to disable competing timekeepers; all
+timekeepers, if properly configured, should all converge to the same time.
 
 ## Developer Notes
 
