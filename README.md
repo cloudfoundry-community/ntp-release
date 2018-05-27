@@ -31,7 +31,7 @@ post_start: |
 ```
 
 Note: It's not terribly important to disable competing timekeepers; all
-timekeepers, if properly configured, should all converge to the same time.
+timekeepers, if properly configured, should converge to the same time.
 
 ## Developer Notes
 
