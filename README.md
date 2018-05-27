@@ -4,10 +4,12 @@ BOSH release for the Network Time Protocol (NTP) Server
 
 ## How To
 
-In this example, we deploy to BOSH Lite:
+In this example, we deploy to [BOSH Lite](https://bosh.io/docs/bosh-lite/):
 
 ```
-bosh -e vbox -d ntp deploy manifests/ntp-lite.yml
+cd ~/workspace/ntp-release
+bosh -e vbox ur
+bosh -e vbox -d ntp -n deploy manifests/ntp-lite.yml
 # query the IP address for time
 ntpdate -q 10.244.0.34 # macOS, old linux
 ```
