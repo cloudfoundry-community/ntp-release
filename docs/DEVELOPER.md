@@ -1,8 +1,8 @@
 ## Updating Releases
 
-```
-export OLD_VERSION=4.2.8p8
-export VERSION=4.2.8p11
+```bash
+export OLD_VERSION=4.2.8p11
+export VERSION=4.2.8p12
 cd ~/workspace/ntp-release
 git pull -r
 find packages/ntp -type f -print0 |

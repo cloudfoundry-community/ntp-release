@@ -1,0 +1,23 @@
+name: ntp
+version: 4.2.8p12
+commit_hash: fee33ac
+uncommitted_changes: true
+jobs:
+- name: ntpd
+  version: ed8ef1c60e84f1032a3a31efc33ebbd43a54cea4
+  fingerprint: ed8ef1c60e84f1032a3a31efc33ebbd43a54cea4
+  sha1: 672b4254f375426f71fcb0efcc48501a11d14877
+- name: ntpd_server
+  version: 7368613c4ebaaedfe5b60d2cd257684a96866680
+  fingerprint: 7368613c4ebaaedfe5b60d2cd257684a96866680
+  sha1: e10f673c371b6c39596dfb31c6e6cca11ef8dc60
+packages:
+- name: ntp
+  version: 8e77fe1647849b011c898b8016e86479b99eb884
+  fingerprint: 8e77fe1647849b011c898b8016e86479b99eb884
+  sha1: 1a81d12a2402fe7a27725edd2adcf7ebfc208a76
+  dependencies: []
+license:
+  version: 596316b93cdeded339f835660a5b50eac2ecc57a
+  fingerprint: 596316b93cdeded339f835660a5b50eac2ecc57a
+  sha1: 1bed533e3817f9789a6a63050139e03e39154af1
