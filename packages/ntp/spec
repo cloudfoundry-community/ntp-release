@@ -2,4 +2,4 @@
 name: ntp
 
 files:
-- ntp/ntp-4.2.8p12.tar.gz # http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz
+- ntp/ntp-4.2.8p13.tar.gz # http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p13.tar.gz
